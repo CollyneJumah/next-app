@@ -31,4 +31,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Dynamic Routes Details
 ### API Routes
 
+### Deploy to [Vercel](https://vercel.com/)
+Vercel is a serverless platform for static and hybrid applications built to integrate with your headless content, commerce, or database.
+You can easily Develop, Preview & Ship
+
 

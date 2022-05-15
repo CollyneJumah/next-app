@@ -3,7 +3,8 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/post';
-
+import Link from 'next/link';
+import Date from '../components/date';
 
 export  async function getStaticProps() {
   const allPostData = getSortedPostsData()
@@ -21,7 +22,7 @@ export default function Home({allPostData}) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Hello, am Collins. A Software Engineer & Technical Writer. </p>
+        <p>Hello, am Collins.orem Ipsum has been the industry's standard dum </p>
         <p>
         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
         when an unknown printer took a galley of type and scrambled it to make a type 
@@ -38,11 +39,13 @@ export default function Home({allPostData}) {
           <ul className={utilStyles.list}>
             {allPostData.map( ({id,date, title}) =>(
               <li className={utilStyles.listItem} key={id}>
-                {title}
+                <Link href={`/posts/${id}`}>
+                  <a>{title}</a>
+                </Link>
                 <br />
-                {id}
-                <br/>
-                {date}
+                <small className={utilStyles.lightText}>
+                  <Date dateString={date} />
+                </small>
               </li>
             ) )}
           </ul>
